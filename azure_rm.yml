@@ -1,0 +1,19 @@
+plugin: azure_rm
+include_vm_resource_groups:
+- learn-ansible-rg
+auth_source: auto
+keyed_groups:
+- prefix: tag
+  key: tags
+- hosts: all
+  tasks:
+  - name: Add service accounts
+    user:
+      name: "testuser1"
+      comment: service account
+      create_home: no
+      shell: /usr/sbin/nologin
+      state: present
+     loop:
+    - testuser1
+    - testuser2
