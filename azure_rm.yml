@@ -14,6 +14,6 @@ keyed_groups:
       create_home: no
       shell: /usr/sbin/nologin
       state: present
-     loop:
+    loop:
     - testuser1
     - testuser2
